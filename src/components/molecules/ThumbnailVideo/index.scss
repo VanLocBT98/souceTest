@@ -1,0 +1,78 @@
+.m-thumbnailVideo {
+    cursor: pointer;
+    width: 100%;
+
+    a {
+        cursor: pointer;
+    }
+
+    &_content {
+        position: relative;
+    }
+
+    &_video {
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
+        visibility: hidden;
+
+        &.open {
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &_play {
+        border-radius: 50%;
+        cursor: pointer;
+        left: 50%;
+        position: absolute;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transition: 0.4s ease;
+        z-index: 2;
+
+        &.hide {
+            display: none;
+        }
+    }
+
+    &_text {
+        padding-top: rem(20);
+
+        @include mobile-down {
+            padding-top: rem(16);
+        }
+
+        p {
+            font-size: rem(20);
+            // color: $davysGrey;
+            font-weight: 600;
+            max-width: rem(647);
+            text-align: center;
+            @include text-overflow(2);
+
+            @include mobile-down {
+                font-size: rem(14);
+            }
+        }
+    }
+
+    &_name {
+        margin-top: rem(10);
+    }
+
+    &_jobPosition {
+        margin: rem(5) 0;
+    }
+
+    &_descriptionMall {
+        max-height: rem(250);
+        overflow: auto;
+        padding: 0 rem(20);
+    }
+}

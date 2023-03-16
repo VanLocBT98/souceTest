@@ -1,0 +1,50 @@
+.t-partnerList {
+    &_desc {
+        margin-top: rem(24);
+
+        @include tablet-down {
+            margin-top: rem(12);
+        }
+    }
+
+    &_list {
+        margin-top: rem(52);
+
+        @include tablet-down {
+            margin-top: rem(32);
+        }
+
+        @include mobile-down {
+            margin-top: rem(16);
+        }
+
+        .o-carousel {
+            margin-left: rem(-16);
+            margin-right: rem(-16);
+
+            &_item {
+                padding-left: rem(16);
+                padding-right: rem(16);
+            }
+
+            @include position-outsite-arrow();
+
+            .slick-dots {
+                bottom: inherit;
+            }
+        }
+    }
+
+    &_img {
+        border: 1px solid $gainsboro;
+        @include desktop-down {
+            margin-left: rem(12);
+            margin-right: rem(12);
+        }
+
+        @include desktop-down {
+            margin-left: rem(8);
+            margin-right: rem(8);
+        }
+    }
+}

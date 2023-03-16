@@ -1,0 +1,22 @@
+$font-sizes: (
+    '16x24': (desktop:(fs: 16, lh: 24)),
+    '20x30': (desktop:(fs: 20, lh: 30), tablet:(fs: 18, lh: 28), mobile:(fs: 16, lh: 24)),
+    '24x32': (desktop:(fs: 24, lh: 32), mobile:(fs: 18, lh: 28)),
+    '32x48': (desktop:(fs: 32, lh: 48), tablet:(fs: 28, lh: 44), mobile:(fs: 24, lh: 36)),
+    '38x52': (desktop:(fs: 38, lh: 52), tablet:(fs: 32, lh: 34), mobile:(fs: 24, lh: 24)),
+    '28x44': (desktop:(fs: 28, lh: 44), tablet:(fs: 24, lh: 40), mobile:(fs: 20, lh: 36)),
+);
+
+.a-heading {
+    @include font-base(24, 32);
+    @include mobile-down {
+        @include font-base(18, 28);
+    }
+    margin: 0;
+
+    @include style-font-size($font-sizes);
+
+    @include style-color();
+    @include style-font-weight();
+    @include style-general();
+}

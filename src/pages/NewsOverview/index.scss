@@ -1,0 +1,15 @@
+.p-newsoverview {
+    &_newsList {
+        margin-top: rem(24);
+    }
+
+    &_videoList {
+        margin-bottom: rem(51);
+        margin-top: rem(59);
+
+        @include tablet-down {
+            margin-bottom: rem(30);
+            margin-top: rem(30);
+        }
+    }
+}

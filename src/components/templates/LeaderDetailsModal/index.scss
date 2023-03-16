@@ -1,0 +1,95 @@
+.t-leaderDetailsModal {
+    position: relative;
+
+    &_flex {
+        display: flex;
+        max-height: rem(560);
+        overflow: auto;
+        padding-bottom: rem(70);
+        padding-top: rem(60);
+        @include scroll-bars(4);
+
+        @include tablet-down {
+            flex-direction: column;
+            padding-top: rem(48);
+        }
+
+        @include iphone-large-lands {
+            height: 95vh;
+        }
+
+        @include mobile-down {
+            padding-top: rem(0);
+        }
+    }
+
+    &_left {
+        flex: 0 0 rem(434);
+        padding-left: rem(48);
+        padding-right: rem(32);
+
+        @include tablet-down {
+            flex: 0 0 45%;
+            padding-bottom: 0;
+            padding-left: rem(24);
+            padding-right: rem(24);
+        }
+
+        @include mobile-down {
+            flex: 0 0 100%;
+        }
+    }
+
+    &_right {
+        flex: 0 0 rem(498);
+
+        @include tablet-down {
+            flex: 0 0 55%;
+        }
+
+        @include mobile-down {
+            flex: 0 0 100%;
+        }
+    }
+
+    &_blurContainer {
+        background: $layer-leader-details;
+        bottom: 0;
+        content: '';
+        height: rem(58);
+        left: 0;
+        position: absolute;
+        width: 100%;
+
+        @include mobile-down {
+            height: rem(44);
+        }
+    }
+
+    &_content {
+        padding-bottom: rem(64);
+        padding-right: rem(48);
+
+        @include tablet-down {
+            padding-bottom: 0;
+            padding-left: rem(24);
+            padding-right: rem(24);
+        }
+
+        &-item {
+            margin-bottom: rem(16);
+
+            @include mobile-down {
+                margin-bottom: rem(12);
+            }
+        }
+
+        &-title {
+            margin-bottom: rem(12);
+
+            @include mobile-down {
+                margin-bottom: rem(4);
+            }
+        }
+    }
+}

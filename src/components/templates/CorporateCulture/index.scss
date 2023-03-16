@@ -1,0 +1,77 @@
+.t-corporateCulture {
+    background-image: url('~assets/images/corporate_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding-bottom: rem(36);
+    padding-top: rem(36);
+
+    @include tablet-down {
+        background-color: $may-green;
+        padding-bottom: rem(24);
+        padding-top: rem(24);
+    }
+
+    &_flex {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_content {
+        flex: 0 0 calc(452 / 1126 * 100%);
+        padding-right: rem(100);
+
+        @include desktop-down {
+            flex: 0 0 45%;
+            padding-right: rem(40);
+        }
+
+        @include tablet-down {
+            flex: 0 0 50%;
+            padding-right: rem(24);
+        }
+
+        @include small-mobile {
+            flex: 0 0 100%;
+            padding-right: 0;
+        }
+    }
+
+    &_image {
+        flex: 0 0 calc(674 / 1126 * 100%);
+
+        @include desktop-down {
+            flex: 0 0 55%;
+        }
+
+        @include tablet-down {
+            flex: 0 0 50%;
+        }
+
+        @include small-mobile {
+            flex: 0 0 100%;
+            margin-top: rem(16);
+        }
+    }
+
+    &_desc {
+        margin-top: rem(8);
+
+        @include tablet-down {
+            margin-top: rem(4);
+        }
+    }
+
+    &_link {
+        margin-top: rem(24);
+
+        @include tablet-down {
+            margin-top: rem(12);
+        }
+
+        .a-button {
+            color: $black085;
+            width: auto;
+        }
+    }
+}

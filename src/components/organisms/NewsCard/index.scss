@@ -1,0 +1,35 @@
+.o-newsCard {
+    border: 1px solid $gainsboro;
+    border-radius: rem(2);
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    transition: all $transition linear;
+
+    &-img {
+        img {
+            width: 100%;
+        }
+    }
+
+    &_content {
+        padding: rem(16) rem(24) rem(24);
+
+        @include tablet-down {
+            padding: rem(16);
+        }
+
+        &_title {
+            @include text-overflow(2);
+        }
+
+        &_desc {
+            margin-top: rem(8);
+            @include text-overflow(3);
+        }
+    }
+
+    &_fileDown {
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,245 @@
+.o-carousel {
+    $root: &;
+    position: relative;
+
+    &_arrow {
+        $arrow: &;
+        background: transparent;
+        border-radius: 0;
+        height: rem(64);
+        transition: $transition-long ease;
+        width: rem(64);
+        z-index: $z-1;
+
+        @include tablet-down {
+            height: rem(40);
+            width: rem(40);
+        }
+
+        @include mobile-down {
+            height: rem(36);
+            width: rem(36);
+        }
+
+        &::before {
+            background-color: transparent;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: rem(24);
+            content: '';
+            display: block;
+            height: 100%;
+            transition: $transition-long ease;
+            width: 100%;
+
+            @include tablet-down {
+                background-size: rem(15);
+            }
+        }
+
+        &:not(.slick-disabled):hover {
+            &#{$arrow}_prev {
+                &-defaultArrow {
+                    background-color: $castleton-green;
+
+                    &::before {
+                        background-image: url('~assets/icons/ic_arrow_prev_white.svg');
+                    }
+                }
+
+                &-castletonArrow {
+                    background: $yellow-green;
+          
+                    &::before {
+                        background-image: url('~assets/icons/ic_arrow_prev_white.svg');
+                    }
+                }
+            }
+
+            &#{$arrow}_next {
+                &-defaultArrow {
+                    background-color: $castleton-green;
+
+                    &::before {
+                        background-image: url('~assets/icons/ic_arrow_next_white.svg');
+                    }
+                }
+
+                &-castletonArrow {
+                    background: $yellow-green;
+          
+                    &::before {
+                        background-image: url('~assets/icons/ic_arrow_next_white.svg');
+                    }
+                }
+
+            }
+        }
+
+        &_prev {
+            left: rem(-88);
+
+            @include tablet-down {
+                left: rem(-60);
+            }
+
+            &::before {
+                background-image: url('~assets/icons/ic_arrow_prev_white.svg');
+            }
+
+            &-defaultArrow {
+                background-color: $white-smoke;
+
+                &::before {
+                    background-image: url('~assets/icons/ic_arrow_prev_green.svg');
+                }
+            }
+
+            &-castletonArrow {
+                background-color: $yellow-green015;
+        
+                &::before {
+                    background-image: url('~assets/icons/ic_arrow_prev_green.svg');
+                }
+            }
+        }
+
+        &_next {
+            right: rem(-88);
+
+            @include tablet-down {
+                right: rem(-60);
+            }
+
+            &::before {
+                background-image: url('~assets/icons/ic_arrow_next_white.svg');
+            }
+
+            &-defaultArrow {
+                background: $white-smoke;
+
+                &::before {
+                    background-image: url('~assets/icons/ic_arrow_next_green.svg');
+                }
+            }
+
+            &-castletonArrow {
+                background: $yellow-green015;
+        
+                &::before {
+                    background-image: url('~assets/icons/ic_arrow_next_green.svg');
+                }
+            }
+        }
+
+        &.banner {
+            &#{$arrow}_prev {
+                left: rem(56);
+
+                @include mobile-down {
+                    left: rem(30);
+                }
+            }
+
+            &#{$arrow}_next {
+                right: rem(56);
+
+                @include mobile-down {
+                    right: rem(30);
+                }
+            }
+        }
+
+        &.default {
+            border: 1px solid $may-green;
+            height: rem(40);
+            width: rem(40);
+
+            @include tablet-down {
+                height: rem(32);
+                width: rem(32);
+            }
+
+            &::before {
+                background-size: rem(15);
+            }
+        }
+
+        &.memberCompanies {
+            &#{$arrow}_prev {
+                left: rem(-74);
+      
+                @include break-max(1365px) {
+                    left: rem(-54);
+                }
+      
+                @include desktop-down {
+                    left: rem(-20);
+                }
+      
+                @include small-mobile {
+                    left: rem(6);
+                }
+            }
+      
+            &#{$arrow}_next {
+                right: rem(-74);
+      
+                @include break-max(1365px) {
+                    right: rem(-54);
+                }
+      
+                @include desktop-down {
+                    right: rem(-20);
+                }
+      
+                @include small-mobile {
+                    right: rem(6);
+                }
+            }
+        }
+    }
+
+    .slick-dots {
+        bottom: rem(16);
+
+        @include mobile-down {
+            bottom: rem(0);
+        }
+
+        button {
+            background-color: $taupe-gray;
+            border-radius: 50%;
+            height: rem(12);
+            opacity: 0.75;
+            width: rem(12);
+
+            @include mobile-down {
+                height: rem(10);
+                width: rem(10);
+            }
+
+            &::before {
+                display: none;
+            }
+        }
+
+        .slick-active {
+            button {
+                background-color: $may-green;
+                height: rem(12);
+                opacity: 0.8;
+                width: rem(12);
+
+                .o-heroBanner & {
+                    background-color: $white;
+                }
+
+                @include mobile-down {
+                    height: rem(10);
+                    width: rem(10);
+                }
+            }
+        }   
+    }
+}

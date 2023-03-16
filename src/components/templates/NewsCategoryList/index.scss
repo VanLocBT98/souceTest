@@ -1,0 +1,146 @@
+.t-newsCategoryList {
+    $root: &;
+
+    &_top {
+        column-gap: rem(32);
+        display: grid;
+        padding-top: rem(32);
+        row-gap: rem(32);
+        width: 100%;
+
+        @include desktop-down {
+            column-gap: rem(24);
+            row-gap: rem(16);
+        }
+
+        @include tablet-up {
+            grid-auto-flow: column;
+            grid-template-columns: 2fr 1fr 1fr;
+        }
+
+        @include tablet-down {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(1, 1fr);
+        }
+    } 
+  
+    &_bottom {
+        border-top: solid 1px $gainsboro;
+        margin-top: rem(24);
+        padding-top: rem(24);
+
+        @include tablet-up {
+            margin-top: rem(32);
+            padding-top: rem(32);
+        }
+    }
+
+    &_item {
+        #{$root}_bottom & { 
+            display: flex;
+            flex-wrap: wrap;
+        }  
+
+        &:first-child {
+            #{$root}_top & { 
+                @include tablet-up {
+                    grid-row-end: 3;
+                    grid-row-start: 1;
+                }
+
+                @include tablet-down {
+                    grid-column: 1/span 2;
+                }
+            }
+        }
+
+        & + & {
+            #{$root}_bottom & { 
+                margin-top: rem(16);
+
+                @include tablet-up {
+                    margin-top: rem(24);
+                }
+            }  
+        }
+    }
+
+    &_image { 
+        #{$root}_bottom & { 
+            flex: 0 0 rem(321);
+            max-width: rem(321);
+
+            @include mobile-down {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+        }
+
+        &.isHorizontal {
+            margin-bottom: 0;
+
+            @include mobile-down {
+                margin-bottom: rem(8);
+            }
+        }
+    }
+
+    &_content { 
+        #{$root}_bottom & { 
+            flex: 1;
+            padding-left: rem(16);
+
+            @include mobile-down {
+                padding-left: 0;
+            }
+        }
+    }
+ 
+    &_description {
+        .a-text {
+            #{$root}_top & { 
+                @include text-overflow(2);
+            }
+    
+            #{$root}_bottom & {
+                @include text-overflow(3);
+            }
+        }
+    }
+
+    &_image {
+        margin-bottom: rem(16);
+
+        @include mobile-down {
+            margin-bottom: rem(6);
+        }
+    }
+
+    &_title {
+        margin-bottom: rem(8);
+
+        &.isHorizontal {
+            margin-bottom: rem(16);
+        }
+
+        @include mobile-down {
+            margin-bottom: rem(6);
+        }
+    }
+
+    .a-link {
+        color: inherit;
+    }
+
+    &_pagination {
+        margin-top: rem(53);
+
+        @include tablet-down {
+            margin-top: rem(33);
+        }
+    }
+
+    &_loading {
+        margin-top: rem(30);
+    }
+}

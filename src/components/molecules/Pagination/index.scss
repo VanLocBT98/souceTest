@@ -1,0 +1,72 @@
+.m-pagination {
+    @include adjust-flex;
+
+    .main {
+        display: flex;
+
+        .page:first-child {
+            margin-left: 0;
+        }
+
+        .page:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .pagination-skip {
+        @include adjust-flex;
+    }
+
+    .page {
+        background: $white;
+        border: 1px solid $gainsboro;
+        border-radius: rem(2);
+        box-sizing: border-box;
+        cursor: pointer;
+        height: rem(32);
+        list-style-type: none;
+        margin-left: rem(4);
+        margin-right: rem(4);
+        min-width: rem(32);
+        overflow: hidden;
+        padding-left: rem(6);
+        padding-right: rem(6);
+        position: relative;
+
+        &:not(.disabled):hover {
+            background-color: $white;
+            border-color: $may-green;
+        }
+
+        .link-page {
+            @include adjust-flex;
+            color: $davys-grey;
+            height: 100%;
+            outline: none;
+            padding: 0;
+            width: 100%;
+
+            @include font-base(14, 22);
+
+            @include tablet-down {
+                @include font-base(12, 16);
+            }
+        }
+    }
+
+    .disabled {
+        opacity: 0.7;
+        pointer-events: none;
+    }
+
+    .active-page {
+        background: $white;
+        border: 0;
+        border: 1px solid $may-green;
+
+        .link-page {
+            color: $may-green;
+        }
+    }
+ 
+}

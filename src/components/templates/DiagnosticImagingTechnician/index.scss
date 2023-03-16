@@ -1,0 +1,67 @@
+.t-diagnosticImagingTechnician {
+    $root: &;
+  
+    &_main {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+
+
+        &::before {
+            background: $may-green;
+            box-shadow: 0 0 24px 1px $kombu-green-1;
+            content: '';
+            height: rem(3);
+            position: absolute;
+            width: 100%;
+        }
+
+        &_content {
+            padding-top: rem(32);
+
+            &_p1,
+            &_p2 {
+                padding-top: rem(24);
+            }
+
+            .a-button {
+                margin-top: rem(25);
+                max-width: rem(120);
+            }
+        }
+
+        @include tablet-down {
+            flex-wrap: wrap;
+        }
+    }
+
+    &_side {
+        padding-left: rem(32);
+        padding-top: rem(32);
+
+        &_divider {
+            background-color: $gainsboro;
+            display: block;
+            height: rem(1);
+            margin-bottom: rem(12);
+            margin-top: rem(12);
+            width: 100%;
+        }
+    
+        &_content {
+            background-color: $yellow-green0033;
+            min-width: rem(354);
+            padding: rem(24);
+
+            @include tablet-down {
+                min-width: max-content;
+            }
+        }
+
+        @include tablet-down {
+            padding-left: 0;
+            padding-top: rem(24);
+            width: 100%;
+        }
+    }
+}

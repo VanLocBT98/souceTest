@@ -1,0 +1,111 @@
+.t-newsListCard {
+    $root: &;
+
+    &_wrapper {
+        display: flex;
+    }
+
+    &_image {
+        margin-right: rem(16);
+        min-width: rem(112);
+
+        @include tablet-down {
+            margin-right: rem(10);
+        }
+    }
+
+    &_title {
+        @include text-overflow(3);
+    }
+
+    &-isVertical {
+        @include mobile-up {
+            #{$root}_wrapper {
+                display: block;
+            }
+
+            #{$root}_image {
+                margin: 0 0 rem(16);
+                max-width: 100%;
+
+                @include tablet-down {
+                    margin: 0 0 rem(8);
+                }
+            }
+
+            #{$root}_title {
+                @include text-overflow(2);
+            }
+        }
+    }
+}
+
+.t-newsList {
+    &_content {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: rem(32);
+
+        @include mobile-down {
+            display: block;
+        }
+
+        &_left {
+            flex: 0 0 60%;
+            padding-right: rem(32);
+
+            @include desktop-down {
+                padding-right: rem(25);
+            }
+
+            @include tablet-down {
+                padding-right: rem(15);
+            }
+
+            @include mobile-down {
+                padding-right: 0;
+
+                .a-text {
+                    font-weight: 400;
+                }
+        
+                .t-newsListCard .a-text {
+                    @include font-base(12, 20);
+                }
+            }
+        }
+
+        &_right {
+            flex: 0 0 40%;
+            margin: rem(-8) 0;
+            max-height: rem(390);
+            overflow: auto;
+            padding-right: rem(20);
+            @include scroll-bars(7, $gray-x11, $white-smoke, 20);
+
+            @include desktop-down {
+                max-height: rem(310);
+            }
+
+            @include tablet-down {
+                margin: rem(-5) 0;
+                max-height: rem(250);
+                padding-right: rem(12);
+            }
+
+            @include mobile-down {
+                margin-top: rem(5);
+                max-height: max-content;
+                padding-right: 0;
+            }
+        }
+    
+        &_item {
+            padding: rem(8) 0;
+
+            @include tablet-down {
+                padding: rem(5) 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,266 @@
+@use 'sass:math';
+
+@mixin text-overflow ($number: 2) {
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    -webkit-line-clamp: ($number);
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@mixin aspect-ratio($width: 1, $height: 1) {
+    padding-bottom: ($height / $width) * 100%;
+}
+
+@mixin transition($value) {
+    transition: $value;
+}
+
+@mixin scroll-bars(
+    $size: 12, 
+    $thumb-color: $green-ryb, 
+    $track-color: $bg-white-smoke, 
+    $border-radius-thumb: 5, 
+    $border-thumb: 2
+) {
+
+    // For Internet Explorer
+
+    scrollbar-face-color: $thumb-color;
+    scrollbar-track-color: $track-color;
+
+    // For Google Chrome
+    &::-webkit-scrollbar {
+        height: rem($size);
+        margin-right: rem(10);
+        width: rem($size);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $thumb-color;
+        // border: rem($border-thumb) solid $track-color;
+        border-radius: rem($border-radius-thumb);
+    }
+
+    &::-webkit-scrollbar-track {
+        background: $track-color;
+    }
+}
+
+@mixin font-base($font-size: 16, $line-height: 24) {
+    font-size: rem($font-size);
+    line-height: rem($line-height);
+}
+
+@mixin style-bg-color() {
+    &-bg-white {
+        background-color: $white;
+    }
+}
+
+@mixin style-font-weight() {
+    &-100 {
+        font-weight: 100;
+    }
+
+    &-200 {
+        font-weight: 200;
+    }
+
+    &-300 {
+        font-weight: 300;
+    }
+
+    &-400 {
+        font-weight: normal;
+    }
+
+    &-500 {
+        font-weight: 500;
+    }
+
+    &-600 {
+        font-weight: 600;
+    }
+
+    &-700 {
+        font-weight: bold;
+    }
+
+    &-800 {
+        font-weight: 800;
+    }
+
+    &-900 {
+        font-weight: 900;
+    }
+}
+
+@mixin style-general() {
+    &-uppercase {
+        text-transform: uppercase;
+    }
+
+    &-capitalize {
+        text-transform: capitalize;
+    }
+
+    &-underline {
+        text-decoration: underline;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+
+    &-center {
+        text-align: center;
+    }
+
+    &-justify {
+        text-align: justify;
+    }
+}
+
+@mixin reset-button {
+    appearance: none;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+@mixin list-style-none {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin adjust-flex($justify-content: center, $align-item: center) {
+    align-items: $align-item;
+    display: flex;
+    justify-content: $justify-content;
+}
+
+$colors-design: (
+    'white': $white,
+    'black': $black,
+    'davysGrey': $davys-grey,
+    'arsenic': $arsenic,
+    'spanishGreen': $spanish-green,
+    'black045': $black045,
+    'black085': $black085,
+    'mayGreen': $may-green,
+    'raisinBlack': $raisin-black,
+    'davysGrey5a': $davys-grey-5a,
+    'grayX11': $gray-x11,
+    'columbiaBlue': $columbia-blue,
+    'whiteSmoke': $white-smoke,
+    'onyx': $onyx,
+    'taupeGray': $taupe-gray,
+);
+
+@mixin style-color {
+    @each $name, $color in $colors-design {
+        &-#{$name} {
+            color: $color;
+        }
+    }
+}
+
+@mixin spacing-generation($prefix, $property, $arraySpacing) {
+    $sizes: $arraySpacing;
+    $spacing: 1rem;
+    $base-size: 16;
+  
+    @for $i from 1 through length($sizes) {
+        $size: nth($sizes, $i);
+        .#{$prefix}-#{$size} {
+            #{$property}: $size/$base-size * $spacing;
+        }
+    }
+}
+
+@mixin style-font-size($sizeList) {
+    @each $size,
+        $val in $sizeList {
+        
+        @if map-get($val, 'desktop') {
+
+            &-#{$size} {
+                font-size: rem(map-get(map-get($val, 'desktop'), 'fs'));
+                line-height: rem(map-get(map-get($val, 'desktop'), 'lh'));
+
+                @if map-get($val, 'tablet') {
+                    @include tablet-down {
+                        font-size: rem(map-get(map-get($val, 'tablet'), 'fs'));
+                        line-height: rem(map-get(map-get($val, 'tablet'), 'lh'));
+                    }
+                }
+
+                @if map-get($val, 'mobile') {
+                    @include mobile-down {
+                        font-size: rem(map-get(map-get($val, 'mobile'), 'fs'));
+                        line-height: rem(map-get(map-get($val, 'mobile'), 'lh'));
+                    }
+                }                
+            }
+        }
+        
+    }
+}
+
+@mixin position-outsite-arrow {
+    &_arrow_next {
+        right: rem(-73);
+  
+        @include break-max(1365px) {
+            right: rem(-40);
+        }
+  
+        @include desktop-down {
+            right: rem(-6);
+        }
+  
+        @include tablet-down {
+            right: rem(6);
+        }
+    }
+  
+    &_arrow_prev {
+        left: rem(-73);
+  
+        @include break-max(1365px) {
+            left: rem(-40);
+        }
+  
+        @include desktop-down {
+            left: rem(-6);
+        }
+  
+        @include tablet-down {
+            left: rem(6);
+        }
+    }
+}
+
+@mixin margin-section($marginTop: 30, $marginBottom: 70) {
+    margin-bottom: rem($marginBottom);
+    margin-top: rem($marginTop);
+  
+    @include tablet-down {
+        margin-bottom: rem($marginBottom - 10);
+        margin-top: rem($marginTop - 6);
+    }
+  
+    @include mobile-down {
+        margin-bottom: rem($marginBottom - 35);
+    }
+}
+
+@mixin transform($value) {
+    -o-transform: #{$value};
+    -moz-transform: #{$value};
+    -ms-transform: #{$value};
+    -webkit-transform: #{$value};
+    transform: #{$value};
+}

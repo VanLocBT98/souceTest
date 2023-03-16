@@ -1,0 +1,24 @@
+.m-relatednews {
+    cursor: pointer;
+  
+    &_wrap {
+        display: flex;
+    }
+  
+    &_image {
+        max-width: rem(132);
+        width: 100%;
+    }
+
+    &_content {
+        margin-left: rem(16);
+
+        .a-text {
+            @include text-overflow(2);
+
+            &:nth-child(2) {
+                margin-top: rem(4); 
+            }
+        }
+    }
+}

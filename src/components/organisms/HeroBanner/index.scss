@@ -1,0 +1,189 @@
+.o-heroBanner {
+    $root: &;
+    height: 100%;
+    position: relative;
+
+    .a-link:hover {
+        opacity: 1;
+    }
+
+    .o-carousel_dots-banner {
+        @include mobile-down {
+            bottom: rem(16);
+            left: 50%;
+            margin-left: 0;
+            transform: translateX(-50%);
+        }
+    }
+
+    &_slider {
+        padding-bottom: 660/1366 * 100%;
+        position: relative;
+
+        &-img {
+            bottom: 0;
+            height: 100%;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 100%;
+        }
+
+        .slick {
+            &-slider,
+            &-list,
+            &-track {
+                height: 100%;
+            }
+
+            &-track {
+                display: flex;
+            }
+
+            &-slide {
+                z-index: 1;
+
+                div {
+                    height: 100%;
+                }
+            }
+
+            &-active {
+                z-index: 2;
+            }
+        }
+    }
+
+    &_content {
+        background-color: $black-4;
+        left: $positionx-content-herobanner;
+        max-width: rem(384);
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        z-index: 2;
+        overflow-y: auto;
+        @include scroll-bars(3);
+        max-height: 660/1366 * 100%;
+
+        @include desktop-up {
+            max-width: calc(470 / 1366 * 100%);
+        }
+
+        @include mobile-down {
+            margin-bottom: rem(32);
+            max-width: 35vw;
+            max-height: 70%;
+        }
+
+        @include iphone-large-lands {
+            max-width: calc((600 / 1366) * 100%);
+        }
+
+        &-title {
+            word-break: break-word;
+            padding: rem(32);
+
+            @include mobile-down {
+                padding: rem(10);
+        
+                .a-heading {
+                    @include font-base(14, 20);
+                }
+            }
+
+            @include iphone-large-lands {
+                padding: rem(16);
+
+                .a-heading {
+                    @include font-base(28, 32);
+                }
+            }
+        }
+
+        &-desc {
+            word-break: break-word;
+            @include mobile-down {
+                .a-text {
+                    @include font-base(12, 18);
+                }
+            }
+
+            @include iphone-large-lands {
+                .a-text {
+                    @include font-base(16, 21);
+                }
+            }
+        }
+
+
+        &-image {
+            margin-bottom: rem(16);
+            max-width: rem(110);
+            @include tablet-down {
+                margin-bottom: rem(8);
+                max-width: rem(60);
+            }
+        }
+    }
+
+    &_btnGroup {
+        bottom: rem(32);
+        left: $positionx-content-herobanner;
+        position: absolute;
+
+        @include iphone-large-lands {
+            bottom: rem(16);
+        }
+
+        @include mobile-down {
+            bottom: rem(8);
+        }
+
+        &_wrap {
+            align-items: center;
+            display: flex;
+
+            @include iphone-large-lands {
+                justify-content: flex-end;
+            }
+        }
+    }
+
+    &_btn {
+        cursor: pointer;
+        height: rem(64);
+        width: rem(64);
+
+        @include tablet-down {
+            height: rem(40);
+            width: rem(40);
+        }
+
+        @include mobile-down {
+            height: rem(30);
+            width: rem(30);
+        }
+
+        &:last-child {
+            margin-left: rem(24);
+        }
+    }
+
+    &_scrollbox { 
+        height: 100%;
+        position: relative;
+    }
+
+    &_contentGroup {
+        &-noScroll {
+            overflow-y: unset;
+
+            @include desktop-down {
+                overflow-y: auto;
+            }
+        }
+    }
+}

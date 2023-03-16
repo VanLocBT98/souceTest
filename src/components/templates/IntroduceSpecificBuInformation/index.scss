@@ -1,0 +1,164 @@
+.t-introduceSpecificBUInformation {
+    align-items: stretch;
+    display: flex;
+    flex-wrap: wrap;
+  
+    @include break-max(1023px) {
+        background-color: $white-smokef2;
+    }
+  
+    &_logo {
+        max-width: rem(132);
+        width: 100%;
+    }
+  
+    &_left,
+    &_right {
+        flex: 0 0 50%;
+        width: 50%;
+  
+        @include break-max(1023px) {
+            flex: 0 0 100%;
+            width: 100%;
+        }
+  
+        @include mobile-down {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+  
+    &_left {
+        &_wrap {
+            height: 100%;
+        }
+
+        &_wrapcontent {
+            background-color: $may-green;
+            overflow: hidden;
+            padding: rem(45) rem(48);
+            position: relative;
+            z-index: 1;
+  
+            @include desktop-up {
+                height: calc(100% - 4px);
+            }
+    
+            @include desktop-down {
+                height: rem(350);
+                padding: rem(15) rem(30);
+            }
+    
+            @include tablet-down {
+                height: auto;
+            }
+    
+            @include mobile-down {
+                padding-left: rem(16);
+                padding-right: rem(16);
+            }
+    
+            &::after {
+                background: url('~assets/images/introduceSpecificBuInformation/background.png');
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                background-size: contain;
+                bottom: 0;
+                content: '';
+                height: 100%;
+                max-width: rem(419);
+                position: absolute;
+                right: 0;
+                width: 100%;
+                z-index: -1;
+            }
+        }
+    }
+  
+    &_desc {
+        max-height: rem(168);
+        margin-top: rem(16);
+        padding-right: rem(10);
+        overflow-y: auto;
+        @include scroll-bars(4, $yellow-green);
+    }
+  
+    &_contact {
+        align-items: center;
+        display: flex;
+        margin-top: rem(16);
+  
+        @include mobile-down {
+            align-items: unset;
+            flex-direction: column;
+        }
+  
+        &-phone {
+            align-items: center;
+            display: flex;
+  
+            span {
+                color: $white;
+                font-weight: 400;
+                margin-left: rem(7);
+                @include font-base(14, 22);
+            }
+        }
+  
+        &-divider {
+            background-color: $gray-x11;
+            height: rem(16);
+            margin-left: rem(24);
+            margin-right: rem(26);
+            width: rem(1);
+  
+            @include mobile-down {
+                display: none;
+            }
+        }
+  
+        &-email {
+            align-items: center;
+            display: flex;
+  
+            @include mobile-down {
+                margin-top: rem(8);
+            }
+  
+            span {
+                color: $white;
+                font-weight: 400;
+                margin-left: rem(7);
+                @include font-base(14, 22);
+            }
+        }
+    }
+  
+    &_button {
+        margin-top: rem(32);
+        max-width: rem(152);
+  
+        @include desktop-down {
+            margin-top: rem(24);
+        }
+  
+        .a-button-primary {
+            background-color: $yellow-green;
+        }
+    }
+  
+    .o-carousel {
+        &_arrow {
+            height: rem(40);
+            width: rem(40);
+        }
+  
+        .slick-prev {
+            left: rem(24);
+        }
+  
+        .slick-next {
+            right: rem(24);
+        }
+    }
+}

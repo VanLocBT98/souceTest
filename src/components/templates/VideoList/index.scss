@@ -1,0 +1,214 @@
+.t-videoList {
+    $root: &;
+
+    &_wrapper {
+        flex: 1;
+    }
+
+    &_main {
+        display: flex;
+        margin-top: rem(32);
+
+        .o-container_row {
+            flex: 1;
+            width: 100%;
+        }
+
+        @include tablet-down {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &_left {
+            flex: 0 0 60%;
+            padding-right: rem(32);
+
+            @include desktop-down {
+                padding-right: rem(25);
+            }
+
+            @include tablet-down {
+                padding-right: 0;
+            }
+        }
+
+        &_right {
+            flex: 0 0 40%;
+        }
+    }
+
+    &_video {
+        position: relative;
+        width: 100%;
+
+        .a-icon {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &_name {
+        padding-top: rem(16);
+    }
+
+    &_divider {
+        background-color: $gainsboro;
+        display: block;
+        height: rem(1);
+        margin-bottom: rem(24);
+        margin-top: rem(24);
+        width: 100%;
+    }
+
+    &_viewmore {
+        display: flex;
+        justify-content: center;
+        margin-bottom: rem(46);
+        margin-top: rem(63);
+
+        @include tablet-down {
+            margin-bottom: rem(30);
+            margin-top: rem(25);
+        }
+
+        .a-button {
+            width: rem(110);
+        }
+    }
+
+    &_loading {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        min-height: rem(280);
+        position: relative;
+
+        .a-loader-circle {
+            left: 50%;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            @include tablet-down {
+                margin-bottom: rem(10);
+                position: relative;
+            }
+        }
+    }
+
+    &_pagination {
+        margin-top: rem(53);
+    }
+}
+
+.t-sideList {
+    $root: &;
+
+    display: flex;
+    flex-direction: column;
+    max-height: rem(378);
+    overflow-y: auto;
+    width: 100%;
+
+    @include scroll-bars(7, $gray-x11, $white-smoke, 20);
+
+    @include tablet-down {
+        margin-top: rem(16);
+        padding-left: 0;
+    }
+
+    &_card {
+        cursor: pointer;
+        display: flex;
+        margin-top: rem(16);
+        padding-right: rem(14);
+
+        .a-text {
+            padding-left: rem(16);
+        }
+
+        &:first-child {
+            margin-top: 0;
+        }
+
+        &-active {
+            #{$root}_cardimg {
+                &::before {
+                    background-color: $black-8;
+                    content: '';
+                    height: 100%;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    z-index: 1;
+                }
+
+                &::after {
+                    align-items: center;
+                    color: $white;
+                    content: 'Đang Xem';
+                    display: flex;
+                    font-weight: 600;
+                    height: 100%;
+                    justify-content: center;
+                    left: 0;
+                    position: absolute;
+                    top: 0;
+                    width: 100%;
+                    z-index: 2;
+                    @include font-base(14, 22);
+                }
+            }
+        }
+    }
+
+    &_cardimg {
+        flex-shrink: 0;
+        max-width: rem(112);
+        position: relative;
+        width: 100%;
+    }
+
+    &_info {
+        .a-text {
+            @include text-overflow;
+        }
+    }
+}
+
+.t-subList {
+    &_item {
+        cursor: pointer;
+        display: flex;
+        padding-bottom: rem(12);
+
+        @include tablet-down {
+            width: 100%;
+        }
+
+        .a-text {
+            padding-left: rem(16);
+        }
+    }
+
+    &_cardimg {
+        max-width: rem(161);
+        flex-shrink: 0;
+        width: 100%;
+        @include mobile-down {
+            max-width: rem(112);
+        }
+    }
+
+    &_info {
+        .a-text {
+            @include text-overflow(3);
+            @include mobile-down {
+                @include text-overflow(2);
+            }
+        }
+    }
+}

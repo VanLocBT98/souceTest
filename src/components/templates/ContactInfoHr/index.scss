@@ -1,0 +1,40 @@
+.t-contactinfohr {
+    background-color: $yellow-green015;
+    box-shadow: 0 0 24px 1px $kombu-green01;
+    overflow: hidden;
+    padding: rem(32) 0;
+    position: relative;
+
+    &::after {
+        background-image: url('~assets/images/hr/background-contact-info.png');
+        background-position: left top;
+        background-repeat: no-repeat;
+        background-size: cover;
+        content: '';
+        height: rem(223);
+        left: calc((29 / 1366) * 100%);
+        position: absolute;
+        top: calc((20 / 150) * 100%);
+        width: rem(167);
+    }
+
+    &_col_head {
+        margin-top: rem(6);
+    }
+
+    &_col_content_big {
+        margin-top: rem(8);
+
+        @include mobile-down {
+            margin-top: rem(4);
+        }
+    }
+
+    &_col_content {
+        margin-top: rem(8);
+
+        @include mobile-down {
+            margin-top: rem(4);
+        }
+    }
+}

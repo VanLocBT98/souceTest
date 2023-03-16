@@ -1,0 +1,5 @@
+.p-newscategory {
+    &_list {
+        @include margin-section;
+    }
+}

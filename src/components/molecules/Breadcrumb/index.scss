@@ -1,0 +1,31 @@
+.m-breadcrumb {
+    padding-bottom: rem(14);
+    padding-top: rem(14);
+
+    &_flex {
+        overflow-x: auto;
+        @include adjust-flex(flex-start, center);
+        @include scroll-bars(4);
+
+        @include small-mobile {
+            padding-bottom: rem(8);
+        }
+    }
+
+    &_item {
+        @include list-style-none();
+    }
+
+    &_content {
+        span {
+            &:last-of-type {
+                white-space: nowrap;
+            }
+        }
+
+        >span {
+            margin-left: rem(8);
+            margin-right: rem(8);
+        }
+    }
+}

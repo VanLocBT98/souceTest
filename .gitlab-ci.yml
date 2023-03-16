@@ -1,0 +1,121 @@
+default:
+  image: node:gallium-alpine
+
+lint:
+  stage: test
+  interruptible: true
+  cache:
+    - key:
+        files:
+          - yarn.lock
+      paths:
+        - node_modules/
+    - key: yarn-cache
+      paths:
+        - ".yarn"
+  script:
+    - yarn install --frozen-lockfile --cache-folder .yarn
+    - yarn tsc
+    - yarn lint:style
+    - yarn lint:script
+    # - yarn test
+  only:
+    - merge_requests
+
+build:
+  image: docker:latest
+  stage: build
+  interruptible: true
+  resource_group: build
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build --pull -t $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_REF_SLUG .
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_REF_SLUG
+  only:
+    - develop
+    - staging
+    - uat
+
+build-main:
+  image: docker:latest
+  stage: build
+  interruptible: true
+  resource_group: build-main
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build --pull -t $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_SHORT_SHA .
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH:$CI_COMMIT_SHORT_SHA
+  only:
+    - main
+
+build-sb:
+  image: docker:latest
+  stage: build
+  interruptible: true
+  resource_group: build-sb
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+  script:
+    - docker build --pull -f Dockerfile.storybook -t $CI_REGISTRY/$CI_PROJECT_PATH/storybook:$CI_COMMIT_REF_SLUG .
+    - docker push $CI_REGISTRY/$CI_PROJECT_PATH/storybook:$CI_COMMIT_REF_SLUG
+  only:
+    - develop
+
+deploy:
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  stage: deploy
+  environment:
+    name: development
+    url: https://novacommerce-dev.3forcom.net
+  resource_group: develop-deployment
+  before_script:
+    - kubectl config set-cluster my-cluster --server="$K8S_SERVER"
+    - kubectl config set clusters.my-cluster.certificate-authority-data "$K8S_CA"
+    - kubectl config set-credentials admin --token="$K8S_TOKEN"
+    - kubectl config set-context default --cluster=my-cluster --user=admin
+    - kubectl config use-context default
+  script:
+    - kubectl -n nova-commerce rollout restart deployment website-develop storybook-develop
+    - kubectl -n nova-commerce rollout status deployment website-develop
+    - kubectl -n nova-commerce rollout status deployment storybook-develop
+  only:
+    - develop
+
+deploy-staging:
+  image:
+    name: bitnami/kubectl:latest
+    entrypoint: [""]
+  stage: deploy
+  environment:
+    name: staging
+    url: https://novacommerce.3forcom.net
+  resource_group: staging-deployment
+  before_script:
+    - kubectl config set-cluster my-cluster --server="$K8S_SERVER"
+    - kubectl config set clusters.my-cluster.certificate-authority-data "$K8S_CA"
+    - kubectl config set-credentials admin --token="$K8S_TOKEN"
+    - kubectl config set-context default --cluster=my-cluster --user=admin
+    - kubectl config use-context default
+  script:
+    - kubectl -n nova-commerce rollout restart deployment website-staging
+    - kubectl -n nova-commerce rollout status deployment website-staging
+  only:
+    - staging
+
+deploy-uat:
+  stage: deploy
+  environment:
+    name: uat
+    url: https://novacommerce-uat.3forcom.org
+  tags:
+    - nsg-uat-k8s
+  resource_group: uat-deployment
+  script:
+    - kubectl -n nova-commerce rollout restart deployment website-uat
+    - kubectl -n nova-commerce rollout status deployment website-uat
+  only:
+    - uat

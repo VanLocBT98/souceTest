@@ -1,0 +1,209 @@
+.o-footer {
+    &_main {
+        background: $may-green;
+        background-image: url('~assets/images/footer/footer_bg.png'), url('~assets/images/footer/building_bg.png');
+        background-position: left bottom, center top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 50%, rem(321);
+
+        @include small-mobile {
+            background-size: 100%, rem(321);
+        }
+    }
+
+    &_wrapper {
+        padding-bottom: rem(40);
+        padding-top: rem(50);
+        @include tablet-down {
+            padding-bottom: rem(24);
+            padding-top: rem(24);
+        }
+    }
+
+    &_linkList {
+        padding-top: rem(40);
+        @include tablet-down {
+            padding-top: rem(24);
+        }
+
+        &_item {
+            margin-bottom: rem(16);
+        }
+
+        &-list {
+            color: $white;
+            list-style-type: none;
+            margin-bottom: rem(15);
+            margin-top: rem(15);
+
+            &-item {
+                align-items: flex-start;
+                display: flex;
+
+                &:not(:first-child) {
+                    margin-top: rem(8);
+                }
+
+                .a-icon {
+                    background-size: unset;
+                    flex-shrink: 0;
+                    margin-right: rem(4);
+                    margin-top: rem(4);
+                }
+            }
+        }
+
+        .a-link {
+            color: $white;
+        }
+    }
+
+    &_infoContainer {
+        border-bottom: 1px solid $white-smokef2;
+        padding-bottom: rem(40);
+        @include adjust-flex(flex-start, flex-start);
+        @include tablet-down {
+            flex-direction: column;
+            padding-bottom: rem(24);
+        }
+
+        &-img {
+            margin-right: rem(43);
+            max-width: rem(148);
+            width: 100%;
+            @include tablet-down {
+                margin-bottom: rem(24);
+                margin-right: rem(0);
+            }
+            @include mobile-down {
+                max-width: rem(100);
+            }
+        }
+
+        &-contact {
+            margin-right: rem(99);
+            margin-top: rem(25);
+            max-width: rem(355);
+            width: 100%;
+
+            a {
+                color: $white;
+            }
+
+            @include tablet-down {
+                margin-bottom: rem(24);
+                margin-right: 0;
+                max-width: unset;
+            }
+        }
+
+        &-contactBox {
+            margin-bottom: rem(24);
+            margin-top: rem(24);
+
+            @include tablet-down {
+                margin-bottom: rem(16);
+                margin-top: rem(16);
+            }
+
+            &:last-child {
+                margin-top: 0;
+            }
+        }
+
+        &-socialList {
+            @include adjust-flex(flex-start, flex-start);
+
+            &-item {
+                margin-right: rem(24);
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &-form {
+            margin-top: rem(25);
+            width: 100%;
+
+            @include tablet-down {
+                margin-top: 0;
+            }
+
+            &-group {
+                @include adjust-flex(flex-start, flex-start);
+                margin-bottom: rem(32);
+                margin-left: rem(-8);
+                margin-right: rem(-8);
+                @include tablet-down {
+                    margin-bottom: rem(16);
+                }
+            }
+
+            &-field {
+                padding-left: rem(8);
+                padding-right: rem(8);
+                width: 100%;
+            }
+
+            &-btn {
+                margin-top: rem(32);
+                @include tablet-down {
+                    margin-top: rem(16);
+                }
+            }
+        }
+
+        .a-button {
+            height: rem(40);
+            padding: rem(8) rem(16);
+
+            &-outline {
+                // color: $may-green;
+
+                &:hover {
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    &_copyRight {
+        background-color: $yellow-green;
+        padding: rem(7) 0;
+
+        &-container {
+            @include adjust-flex(space-between, center);
+
+            @include tablet-down {
+                align-items: flex-start;
+                flex-direction: column;
+                margin-bottom: rem(8);
+            }
+        }
+
+        &-wrapper {
+            @include adjust-flex(flex-start, center);
+            @include tablet-down {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        &-item {
+            &:last-child {
+                margin-left: rem(60);
+                @include tablet-down {
+                    margin-bottom: rem(16);
+                    margin-left: 0;
+                    margin-top: rem(8);
+                }
+            }
+
+            &:only-child {
+                margin-left: 0;
+            }
+        }
+    }
+}

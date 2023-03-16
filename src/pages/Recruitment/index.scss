@@ -1,0 +1,15 @@
+.p-recruitment {
+    &_listJob,
+    &_introCompany,
+    &_policy {
+        @include margin-section;
+    }
+
+    &_contactHr {
+        margin-top: rem(47);
+
+        @include tablet-down {
+            margin-top: rem(24);
+        }
+    }
+}

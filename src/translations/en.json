@@ -1,0 +1,132 @@
+{
+  "menu": {
+    "search": "Search"
+  },
+  "general": {
+    "full_name_required": "Please enter your first and last name",
+    "title_required": "Please enter a title",
+    "email_required": "Please enter your email",
+    "invalid_email_required": "Invalid email",
+    "phone_required": "Please enter the phone number",
+    "malformed_required": "Malformed",
+    "location_required": "Please enter location",
+    "experience_required": "Please enter experience",
+    "company_required": "Please enter the nearest company",
+    "position_required": "Please enter your job title",
+    "file_required": "Please select file",
+    "malformed_file_required": "The file is not in the correct format",
+    "size_file_required": "File phải nhỏ hơn 3MB",
+    "share": "Share",
+    "topic": "Topic",
+    "see_more_btn": "See more",
+    "compact_btn": "Compact",
+    "return_btn": "Return",
+    "contact_btn": "Contact",
+    "website_access": "Access website",
+    "sign_up": "SIGN UP FOR"
+  },
+  "page403": {
+    "title": "Sorry, we couldn't find this page.",
+    "description": "Please return to the homepage or contact us for assistance."
+  },
+  "page404": {
+    "title": "Sorry, you cannot access this page.",
+    "description": "Please return to the homepage or contact us for assistance."
+  },
+  "page500": {
+    "title": "Internal server error",
+    "description": "Please return to the homepage or contact us for assistance."
+  },
+  "page503": {
+    "title": "Sorry, the system is under maintenance",
+    "description": "The information page you are looking for is under maintenance, please try again later."
+  },
+  "notify": {
+    "sent_successfully": "Sent successfully",
+    "sent_failed": "Send failed",
+    "thank_you": "Thank you for contacting us!",
+    "please_check": "Please check the information again",
+    "close": "Close",
+    "no_data": "No data"
+  },
+  "pages": {
+    "home": "Home",
+    "news": "Community support",
+    "news_events": "News events",
+    "investment_sectors": "Investment Sectors",
+    "member_company": "Member Company",
+    "investment_relations": "Investment Relations",
+    "recruitment_news": "Recruitment News"
+  },
+  "news": {
+    "filter_all": "All news",
+    "latest_news": "Latest news",
+    "date_picker_start": "From date",
+    "date_picker_end": "To date",
+    "related_news": "Related news"
+  },
+  "contact": {
+    "cf_name_placeholder": "Name",
+    "cf_email_placeholder": "Email",
+    "cf_phone_placeholder": "Phone",
+    "cf_unit_placeholder": "Unit name",
+    "cf_content_placeholder": "Content",
+    "cf_file_label": "Attachment file (Please choose file < 3mb, pdf file, doc, docx) *",
+    "cf_file_placeholder": "Select file from your computer",
+    "cf_submit_btn": "Submit"
+  },
+  "recruitment": {
+    "search_btn": "Search",
+    "apply_btn": "Apply",
+    "apply": "Apply",
+    "position": "Position",
+    "occupation": "Occupation",
+    "location": "Location",
+    "application_code": "Application code",
+    "expire_date": "Expire date",
+    "filter_all": "All",
+    "rf_name_label": "Full name",
+    "rf_name_placeholder": "Enter your full name",
+    "rf_phone_label": "Phone",
+    "rf_phone_placeholder": "Enter your phone",
+    "rf_work_experience_label": "Work experience",
+    "rf_work_experience_placeholder": "Enter the number of years of work experience",
+    "rf_position_label": "position",
+    "rf_email_label": "Email",
+    "rf_email_placeholder": "Enter your email",
+    "rf_location_label": "Location",
+    "rf_location_placeholder": "Choose location",
+    "rf_file_label": "Attachment file (Please choose file < 3mb, pdf file, doc, docx) *",
+    "rf_file_placeholder": "Select file from your computer",
+    "rf_nearest_company_label": "The nearest company",
+    "rf_nearest_company_placeholder": "The nearest company",
+    "hochiminh": "Ho Chi Minh",
+    "hanoi": "Ha Noi",
+    "quantity": "Quantity"
+  },
+  "search": {
+    "latest_results": "Latest results",
+    "oldest_result": "Oldest Result",
+    "enter_search_keywords": "Enter search keywords",
+    "results_found_for": "Results found for",
+    "sort_results": "Sort results"
+  },
+  "diagnostic": {
+    "title": "Unit",
+    "department": "Department",
+    "location": "Location",
+    "expiration_date": "Expiration date"
+  },
+  "remuneration_policy": {
+    "title": "Remuneration policy"
+  },
+  "pdfList" : {
+    "search": "Document search",
+    "lastest_uploaded": "Lastest uploaded",
+    "last_posting_date": "Last posting date",
+    "published_date": "Published date",
+    "title": "Title",
+    "download": "Download",
+    "touch_to_download": "Please press and hold the button to download"
+  }
+}

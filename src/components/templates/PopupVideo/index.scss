@@ -1,0 +1,32 @@
+.t-popupVideo {
+    height: unset;
+    max-height: unset;
+    max-width: rem(850);
+    min-height: calc(100vh - 64px);
+
+    &_overlay {
+        overflow: auto;
+    }
+
+    @include iphone-large-lands {
+        max-width: rem(642);
+    }
+    @media only screen and (max-width: 568px) and (orientation: landscape) {
+        max-width: rem(500);
+    }
+
+    .o-modal-container {
+        background: transparent;
+        overflow: hidden;
+    }
+
+    &_wrap {
+        height: 100%;
+
+        // .o-carousel_item {
+        //   img {
+        //     width: 100%;
+        //   }
+        // }
+    }
+}

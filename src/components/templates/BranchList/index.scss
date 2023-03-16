@@ -1,0 +1,122 @@
+.t-branchList {
+    height: 100%;
+  
+    &_description {
+        margin-bottom: rem(53);
+        margin-top: rem(24);
+  
+        @include tablet-down {
+            margin-bottom: rem(40);
+            margin-top: rem(16);
+        }
+  
+        @include mobile-down {
+            margin-bottom: rem(30);
+        }
+    }
+  
+  
+    &_content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: center;
+        margin: 0 rem(-9) rem(-16);
+  
+        @include mobile-up {
+            margin: 0 rem(-17) rem(-20);
+        }
+    }
+  
+    &_item {
+        flex: 0 0 calc(100% / 2);
+        margin-bottom: rem(16);
+        max-width: calc(100% / 2);
+        padding: 0 rem(9);
+    
+        @include desktop-up {
+            flex: 0 0 calc(100% / 4);
+            max-width: calc(100% / 4);
+        }
+  
+        @include mobile-up {
+            margin-bottom: rem(20);
+            padding: 0 rem(17);
+        }
+    }
+  
+    &_inner {
+        background: $white;
+        border-radius: rem(3);
+        box-shadow: 0 rem(3) rem(6) rem(-4) $black-12, 0 rem(6) rem(16) $black-08 , 0 rem(9) rem(28) rem(8) $black-05;
+        height: 100%;
+        position: relative;
+     
+        &.contentshow {
+            cursor: pointer;
+        }
+      
+        &_tooltip {
+            background-color: $taupe-gray;
+            border-radius: rem(4);
+            left: 50%;
+            opacity: 0;
+            padding: rem(2) rem(8);
+            position: absolute;
+            top: 3%;
+            transform: translateX(-50%);
+            transition: opacity 0.3s;
+            visibility: hidden;
+            z-index: 1;
+  
+            &::after {
+                border-color: $taupe-gray transparent transparent transparent;
+                border-style: solid;
+                border-width: rem(5);
+                content: '';
+                left: 50%;
+                position: absolute;
+                top: 100%;
+                transform: translateX(-50%);
+            }
+        }
+  
+        &:hover {
+            .t-branchList_inner_tooltip {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+  
+    &_thumbnail {
+        padding: rem(35);
+  
+        .a-image {
+            border-radius: rem(3);
+        } 
+    }
+  
+    &_title {
+        border-top: solid rem(1) $gainsboro;
+        margin: 0 rem(14);
+        padding: rem(8) 0 rem(11);
+  
+        @include mobile-up {
+            margin-left: rem(28);
+            margin-right: rem(28);
+        }
+    }
+  
+    &_info {
+        margin-top: rem(73);
+  
+        @include tablet-down {
+            margin-top: rem(30);
+        }
+    }
+  
+    .a-link {
+        color: inherit;
+    }
+}

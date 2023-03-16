@@ -1,0 +1,65 @@
+.t-VMV {
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &_block {
+        background-color: $white;
+        box-shadow: 0 0 rem(24) rem(1) $kombu-green-1;
+        flex: 0 0 calc(100% / 3);
+        padding: rem(40);
+        position: relative;
+
+        @include tablet-down {
+            padding: rem(24);
+        }
+
+        @include mobile-down {
+            flex: 0 0 100%;
+
+            & + & {
+                margin-top: rem(12);
+            }
+        }
+    }
+
+    &_icon {
+        max-width: rem(60);
+    }
+
+    &_title {
+        margin-top: rem(20);
+
+        @include tablet-down {
+            margin-top: rem(12);
+        }
+    }
+
+    &_desc {
+        margin-top: rem(12);
+
+        @include tablet-down {
+            margin-top: rem(6);
+        }
+    }
+
+    &_content {
+        position: relative;
+
+        &::before {
+            background: $may-green;
+            content: '';
+            height: calc(100% + 24px);
+            left: rem(-40);
+            position: absolute;
+            top: 0;
+            width: rem(3);
+
+            @include tablet-down {
+                left: rem(-24);
+            }
+        }
+    }
+}

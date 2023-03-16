@@ -1,0 +1,51 @@
+$size-icon: (
+    '14x14': (w: 14, h: 14),
+    '16x16': (w: 16, h: 16),
+    '18x18': (w: 18, h: 18),
+    '20x20': (w: 20, h: 20),
+    '24x24': (w: 24, h: 24),
+    '10x10': (w: 10, h: 10),
+    '40x40': (w: 40, h: 40),
+);
+
+$icon-src: (
+    'search': icon-path-generation('ic_search.svg'),
+    'closeGray': icon-path-generation('ic_close_gray.svg'),
+    'blackSmallClose': icon-path-generation('ic_black_small_close.svg'),
+    'redError': icon-path-generation('ic_error_outline.svg'),
+    'prev': icon-path-generation('ic_prev.svg'),
+    'next': icon-path-generation('ic_next.svg'),
+    'playVideo': icon-path-generation('ic_play_video-white.svg'),
+    'closeGreen': icon-path-generation('ic_close_green.svg'),
+    'dropDownGray': icon-path-generation('ic_drop_down_gray.svg'),
+    'hamburger': icon-path-generation('ic_hamburger.svg'),
+    'searchGray': icon-path-generation('ic_search-gray.svg'),
+    'arrowRightWhite': icon-path-generation('ic_arrow_right_white.svg'),
+    'phoneGreen': icon-path-generation('ic_phone_green.svg'),
+    'emailGreen': icon-path-generation('ic_email_green.svg'),
+    'facebookOrigin': icon-path-generation('ic_facebook_origin.svg'),
+    'zaloOrigin': icon-path-generation('ic_zalo_origin.svg'),
+    'cloudUpload': icon-path-generation('ic_cloud_upload.svg'),
+);
+
+.a-icon {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+
+    @each $size,
+        $val in $size-icon {
+        &-#{$size} {
+            height: map-get($val, 'h')+ px;
+            width: map-get($val, 'w') + px;
+        }
+    }
+
+    @each $icon,
+        $val in $icon-src {
+        &-#{$icon} {
+            background-image: url($val);
+        }
+    }
+}

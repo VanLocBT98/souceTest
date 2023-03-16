@@ -1,0 +1,98 @@
+.o-table {
+    $root: &;
+    overflow: auto;
+    position: relative;
+
+    &_nodata {
+        .a-text {
+            text-align: center !important;
+        }
+    }
+
+    &_wrap {
+        border: 0;
+        border-collapse: collapse;
+        width: 100%;
+
+        @include mobile-down {
+            min-width: rem(500);
+        }
+    }
+
+    &-spacing {
+        #{$root}_wrap {
+            border-spacing: rem(2) 0;
+        }
+    }
+
+    &_header {
+        background: $white-smokef2;
+        box-shadow: 0 0 rem(24) rem(1) $kombu-green-1;
+  
+        &_cell {
+            padding: rem(29) rem(10) rem(25);
+        }
+    }
+
+    &_header_cell,
+    &_body_cell {
+        &:first-child {
+            padding-left: rem(24);
+        }
+
+        &:last-child {
+            padding-right: rem(24);
+
+            .a-text {
+                text-align: right;
+            }
+        }
+    }
+
+    &_body {
+        &_row {
+            box-shadow: 0 0 rem(24) rem(1) $kombu-green-1;
+            cursor: pointer;
+            position: relative;
+
+            &::after {
+                background-color: $spanish-green;
+                bottom: 0;
+                content: '';
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 0;
+            }
+
+            &:hover {
+                &::after {
+                    width: rem(3);
+                }
+            }
+        }
+
+        &_cell {
+            padding: rem(24) rem(10) rem(30);
+
+            &:first-child {
+                max-width: rem(300);
+            }
+
+            @include mobile-down {
+                padding: rem(10);
+            }
+        }
+    }
+
+    &_hide,
+    &_body_hide {
+        background-color: transparent;
+        height: rem(20);
+
+        @include mobile-down {
+            height: rem(10);
+        }
+    }
+
+}

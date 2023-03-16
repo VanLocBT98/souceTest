@@ -1,0 +1,80 @@
+.t-introductionFieldInvestment {
+    $root: &;
+  
+    &_wrapper {
+        align-items: stretch;
+        display: flex;
+        flex-wrap: wrap;
+  
+        @include mobile-down {
+            flex: 0 0 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+  
+    &_main,
+    &_image {
+        flex: 0 0 50%;
+  
+        @include desktop-down {
+            flex: 0 0 100%;
+        }
+  
+        @include mobile-down {
+            flex: 0 0 100%;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+  
+    &_main {
+        &_wrap {
+            height: 100%;
+        }
+  
+        &_wrapContent {
+            background: $may-green url('~assets/images/introductionFieldInvestment/MaskGroup.png') bottom
+                right/contain no-repeat;
+            height: 100%;
+            padding: rem(48);
+  
+            @include desktop-down {
+                flex: 0 0 100%;
+            }
+  
+            @include tablet-down {
+                padding: rem(30);
+            }
+        }
+  
+        &_title {
+            padding-bottom: rem(16);
+  
+            .a-heading {
+                @include text-overflow(2);
+            }
+        }
+  
+        &_content {
+            max-height: rem(168);
+            overflow-y: auto;
+            padding-right: rem(10);
+            @include scroll-bars(4, $yellow-green);
+  
+            @include desktop-down {
+                max-height: none;
+            }
+        }
+    }
+  
+    &_image {
+        .a-image {
+            max-width: 100%;
+        }
+  
+        @include desktop-down {
+            flex: 0 0 100%;
+        }
+    }
+}

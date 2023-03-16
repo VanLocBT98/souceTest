@@ -1,0 +1,59 @@
+$image-ratio: (
+    'logo': (w: 91, h: 71),
+    '1x1': (w: 1, h: 1),
+    '3x2': (w: 3, h: 2),
+    '4x3': (w: 4, h: 3),
+    '3x4': (w: 3, h: 4),
+    '16x9': (w: 16, h: 9),
+    '1366x640': (w: 1366, h: 640),
+    '66x37': (w: 66, h: 37),
+    '644x362': (w: 644, h: 362),
+    '225x133': (w: 225, h: 133),
+    '257x170': (w: 257, h: 170),
+    '45x53': (w: 45, h: 53),
+    'logoNova': (w: 85, h: 56),
+    '148x97': (w: 148, h: 97),
+    '112x63': (w: 112, h: 63),
+    '161x91': (w: 161, h: 91),
+    '555x416':(w: 555, h: 416),
+    '555x424': (w: 555, h: 424),
+    '255x169': (w: 255, h: 169),
+    '354x236': (w: 354, h: 236),
+    '321x180': (w: 321, h: 180),
+    '547x308': (w: 547, h: 308),
+    '233x146': (w: 233, h: 146),
+    '354x199': (w: 354, h: 199),
+    '82x54': (w: 82, h: 54),
+);
+
+.a-image {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 100%;
+    position: relative;
+    transition: $transition-long ease;
+    width: 100%;
+
+    img {
+        height: 100%;
+        left: 0;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+    }
+
+    &-contain {
+        img {
+            object-fit: contain;
+        }
+    }
+
+    @each $size,
+        $val in $image-ratio {
+        &-#{$size} {
+            @include aspect-ratio(map-get($val, 'w'), map-get($val, 'h'));
+        }
+    }
+}

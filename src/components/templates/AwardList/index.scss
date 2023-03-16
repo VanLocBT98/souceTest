@@ -1,0 +1,104 @@
+.t-awardList {
+    &_item {
+        @include adjust-flex(flex-start, center);
+        flex-direction: column;
+
+        &-even {
+            flex-direction: column-reverse;
+        }
+
+        &-dot {
+            background-color: $spanish-green4a;
+            border-radius: 50%;
+            cursor: pointer;
+            height: rem(12);
+            position: relative;
+            width: rem(12);
+
+            &::before {
+                background-color: $emerald-02;
+                border-radius: 50%;
+                content: '';
+                height: rem(20);
+                left: rem(-4);
+                position: absolute;
+                top: rem(-4);
+                width: rem(20);
+            }
+        }
+
+        &-desc {
+            padding-top: rem(8);
+            @include text-overflow(4);
+        }
+
+        &-logo,
+        &-img {
+            margin: rem(16) 0;
+            min-height: rem(169);
+
+            img {
+                margin: 0 auto;
+                max-width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .o-carousel {
+        &_item {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: rem(176);
+        }
+    }
+
+    .o-carousel_wrap {
+        height: 100%;
+    }
+
+    .slick-track {
+        display: flex;
+    }
+  
+    .slick-slide {
+        height: auto;
+    }
+
+    &_list {
+        position: relative;
+
+        &-line {
+            border-bottom: 1px dashed $cadmium-green;
+            height: 1px;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+        }
+    }
+
+    &_btnGroup {
+        @include adjust-flex(center, center);
+        margin-bottom: rem(74);
+        margin-top: rem(40);
+        @include tablet-down {
+            margin-bottom: rem(40);
+            margin-top: rem(24);
+        }
+
+        @include mobile-down {
+            margin-bottom: rem(32);
+            margin-top: rem(16);
+        }
+
+        &-item {
+            border: 1px solid $columbia-blue;
+            cursor: pointer;
+            height: rem(40);
+            margin: 0 rem(12);
+            width: rem(40);
+        }
+    }
+}

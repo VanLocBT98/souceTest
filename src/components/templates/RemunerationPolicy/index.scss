@@ -1,0 +1,72 @@
+.t-remunerationPolicy {
+    &_wrapper {
+        background-color: $yellow-green0033;
+        margin-top: rem(72);
+        min-height: rem(218);
+        padding: 0 rem(16) rem(16);
+        position: relative;
+
+        @include mobile-down {
+            margin-top: rem(50);
+            min-height: rem(250);
+            padding-left: rem(12);
+            padding-right: rem(12);
+        }
+    }
+
+    &_icon {
+        align-items: center;
+        background-color: $may-green;
+        border-radius: 50%;
+        display: flex;
+        height: rem(80);
+        justify-content: center;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        transform: translate(-50%, -50%);
+        width: rem(80);
+
+        .a-image {
+            height: rem(32);
+            width: rem(32);
+        }
+    }
+
+    &_heading {
+        padding-top: rem(52);
+    }
+
+    &_content {
+        padding-top: rem(16);
+        @include text-overflow(5);
+    }
+
+    &_item {
+        flex: 0 0 33.333%;
+        padding-left: rem(16);
+        padding-right: rem(16);
+        padding-top: rem(32);
+
+        @include tablet-down {
+            flex: 0 0 50%;
+        }
+
+        @include mobile-down {
+            padding-left: rem(12);
+            padding-right: rem(12);
+        }
+
+        @include small-mobile {
+            flex: 0 0 100%;
+        }
+    }
+
+    &_main {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: rem(-16);
+        margin-right: rem(-16);
+    } 
+}

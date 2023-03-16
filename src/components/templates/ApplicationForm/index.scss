@@ -1,0 +1,136 @@
+.t-applicationForm {
+    background-color: $yellow-green015;
+    box-shadow: 0 0 rem(24) rem(1) $kombu-green01;
+    padding-top: rem(40);
+    position: relative;
+    z-index: 1;
+
+    @include tablet-down {
+        padding-top: rem(20);
+    }
+
+    &::before {
+        background: url('~assets/images/applicationForm/logo_bg.png');
+        background-repeat: no-repeat;
+        content: '';
+        height: 100%;
+        left: calc((104 / 1366) * 100%);
+        max-width: rem(419);
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: -1;
+    }
+
+    &_content {
+        width: 100%;
+    }
+
+    &_inputGroup {
+        flex-wrap: wrap;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: rem(32);
+        max-width: rem(771);
+        @include adjust-flex(flex-start, flex-start);
+
+        @include mobile-down {
+            flex-direction: column;
+            margin-top: rem(20);
+        }
+
+        &-field6 {
+            flex: 0 0 calc(100% / 2);
+            margin-bottom: rem(20);
+            padding: 0 rem(16);
+
+            @include mobile-down {
+                flex: 0 0 100%;
+                margin-bottom: rem(12);
+                width: 100%;
+            }
+
+            label {
+                color: $may-green;
+            }
+        }
+
+        &-field12 {
+            flex: 0 0 100%;
+            margin-bottom: rem(20);
+            padding: 0 rem(16);
+            @include mobile-down {
+                flex: 0 0 100%;
+                margin-bottom: rem(12);
+                width: 100%;
+            }
+
+            label {
+                color: $may-green;
+            }
+        } 
+    }
+
+    &_wrapButton {
+        background: $yellow-green03;
+        box-shadow: 0 0 rem(24) rem(1) $columbia-blue01;
+        margin-top: rem(4);
+        padding: rem(16) 0;
+
+        &-button {
+            margin: auto;
+            max-width: rem(125);
+        }
+    }
+
+    &_fileInput {
+        $file-input: &;
+  
+        &_pending {
+            margin-bottom: rem(8);
+        }
+
+        &_content {
+            background-color: $white;
+            border: 1px solid $gainsboro;
+            border-radius: rem(2);
+            flex-direction: column;
+            padding: rem(18) rem(19) rem(18);
+            @include adjust-flex(center, center)  ;
+        }
+  
+        &_fileName {
+            @include text-overflow(2);
+  
+            .a-text {
+                word-break: break-all;
+            }
+        }
+  
+        &_inputfile {
+            opacity: 0;
+            position: absolute;
+            visibility: hidden;
+        }
+  
+        &_label {
+            border: 1px dashed $gainsboro;
+            cursor: pointer;
+            margin-top: rem(12);
+            padding-left: rem(8);
+            padding-right: rem(8);
+            @include adjust-flex(center, center);
+  
+            .a-icon {
+                margin-right: rem(8);
+            }
+        }
+  
+        &_errorMessage {
+            color: $fire-engine-red;
+            font-weight: 500;
+            margin-top: rem(4);
+            @include font-base(12, 18);
+        }
+    }
+}

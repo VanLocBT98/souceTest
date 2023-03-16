@@ -1,0 +1,141 @@
+.o-tabs {
+    $root: &;
+
+    &_labels {
+        border-radius: rem(3);
+        overflow: auto hidden;
+        position: relative;
+
+        @include scroll-bars(4);
+
+        &-default {
+            @include adjust-flex();
+
+            @include small-mobile {
+                @include adjust-flex(flex-start, center);
+            }
+        }
+
+        &-search {
+            @include adjust-flex(flex-start, center);
+        }
+    }
+
+    &_label {
+        color: $raisin-black;
+        font-weight: 400;
+        text-transform: uppercase;
+        white-space: nowrap;
+        @include font-base(14, 22);
+
+        &-16x24 {
+            @include font-base(16, 24);
+        }
+        @include mobile-down {
+            @include font-base(16, 20);
+        }
+
+        #{$root}_tab-search & {
+            color: $black-085;
+        }
+    }
+
+    &_tab {
+        cursor: pointer;
+        position: relative;
+
+        &-default {
+            background: $snow;
+            border: rem(1) solid $anti-flash-white;
+            margin-left: rem(2);
+            margin-right: rem(2);
+            padding: rem(9) rem(16);
+    
+            @include mobile-down {
+                margin-left: rem(10);
+                margin-right: rem(10);
+            }
+    
+            &::after {
+                background: $anti-flash-white;
+                bottom: rem(-1);
+                content: '';
+                height: rem(1);
+                position: absolute;
+                right: rem(-5);
+                width: rem(4);
+                z-index: $z-1;
+            }
+    
+            &:last-child {
+                &::after {
+                    width: 0;
+                }
+            }
+        }
+
+        &-search {
+            padding-bottom: rem(4);
+            position: relative;
+
+            &::after {
+                background: $spanish-green4a;
+                content: '';
+                height: rem(2);
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                z-index: $z-1;
+                width: 0;
+            }
+
+            &:not(:first-child) {
+                margin-left: rem(32);
+
+                @include tablet-down {
+                    margin-left: rem(20);
+                }
+            }
+        }
+
+        &-active {
+            &#{$root}_tab-default {
+                background-color: $white;
+                border-bottom: 0;
+    
+                #{$root}_label {
+                    color: $spanish-green;
+                    font-weight: 500;
+                }
+            }
+
+            &#{$root}_tab-search {
+                background: transparent;
+
+                &::after {
+                    transition: all 0.3s linear;
+                    width: 100%;
+                }
+
+                #{$root}_label {
+                    color: $spanish-green4a;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &-primary {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+
+    &_panel {
+        display: none;
+
+        &-active {
+            display: block;
+            margin-top: rem(40);
+        }
+    }
+}

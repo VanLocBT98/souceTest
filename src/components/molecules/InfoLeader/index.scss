@@ -1,0 +1,43 @@
+.m-infoleader {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_wrapper {
+        background-image: url('~assets/images/polygon_bg.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 95% 100%;
+        cursor: pointer;
+        height: rem(257);
+        max-width: rem(257);
+        position: relative;
+        width: 100%;
+        @include tablet-down {
+            transform: scale(0.8);
+        }
+    }
+
+    &_avatar {
+        background-position: center center;
+        background-size: contain;
+        bottom: 0;
+        clip-path: path('M130.462 4.94553L229.161 76.6548C235.996 81.6204 238.855 90.422 236.245 98.4565L198.545 214.485C195.935 222.519 188.447 227.959 180 227.959H58.0004C49.5525 227.959 42.0654 222.519 39.4548 214.485L1.75504 98.4565C-0.855508 90.422 2.00433 81.6204 8.83884 76.6548L107.538 4.94552C114.373 -0.02004 123.627 -0.0200298 130.462 4.94553Z');
+        left: rem(10);
+        position: absolute;
+        right: 0;
+        top: rem(8);
+    }
+
+    &_name {
+        margin-top: rem(20);
+        @include tablet-down {
+            margin-top: rem(-16);
+        }
+    }
+
+    &_position {
+        margin-top: rem(8);
+    }
+}

@@ -1,0 +1,52 @@
+.a-textarea {
+    $root: &;
+    position: relative;
+
+    &-disabled {
+        #{$root}_input {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+    }
+
+    &-error {
+        #{$root}_input {
+            border-color: $sinopia;
+            color: $sinopia;
+        }
+    }
+
+    &_input {
+        appearance: none;
+        background: $white;
+        border: 1px solid $gainsboro;
+        border-radius: rem(2);
+        color: $raisin-black;
+        font-family: inherit;
+        font-weight: 400;
+        margin: 0;
+        outline: none;
+        padding: rem(5) rem(12);
+        resize: none;
+        transition: all $transition linear;
+        width: 100%;
+        @include font-base(14, 22);
+
+        &::placeholder {
+            color: $taupe-gray;
+            font-weight: 400;
+            @include font-base(14, 22);
+        }
+    }
+
+    &_message {
+        @include font-base(12, 18);
+        font-weight: 500;
+        margin-top: rem(4);
+        opacity: 0.8;
+
+        &-error {
+            color: $fire-engine-red;
+        }
+    }
+}

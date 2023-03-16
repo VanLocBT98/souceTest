@@ -1,0 +1,133 @@
+{
+  "menu": {
+    "search": "Tìm kiếm"
+  },
+  "general": {
+    "full_name_required": "Vui lòng nhập họ và tên",
+    "title_required": "Vui lòng nhập tiêu đề",
+    "email_required": "Vui lòng nhập email",
+    "invalid_email_required": "Email không hợp lệ",
+    "phone_required": "Vui lòng nhập số điện thoại",
+    "malformed_required": "Không đúng định dạng",
+    "location_required": "Vui lòng nhập địa điểm",
+    "experience_required": "Vui lòng nhập kinh nghiệm",
+    "company_required": "Vui lòng nhập công ty làm gần nhất",
+    "position_required": "Vui lòng nhập chức vụ",
+    "file_required": "Vui lòng chọn file",
+    "malformed_file_required": "File không đúng format",
+    "size_file_required": "File must be less than 3MB",
+    "share": "Chia sẻ",
+    "topic": "Chủ đề",
+    "see_more_btn": "Xem thêm",
+    "compact_btn": "Rút gọn",
+    "return_btn": "Quay về",
+    "contact_btn": "Liên hệ",
+    "website_access": "Truy cập Website",
+    "sign_up": "ĐĂNG KÝ NHẬN TIN"
+  },
+  "page403": {
+    "title": "Rất tiếc, chúng tôi không tìm thấy trang này.",
+    "description": "Vui lòng trở về trang chủ hoặc liên hệ với chúng tôi để được hỗ trợ."
+  },
+  "page404": {
+    "title": "Rất tiếc, Quý Khách không thể truy cập trang này.",
+    "description": "Vui lòng quay lại trang chủ hoặc liên hệ với chúng tôi để được hỗ trợ."
+  },
+  "page500": {
+    "title": "Lỗi máy chủ nội bộ.",
+    "description": "Rất tiếc, một vài lỗi không mong muốn đã xảy ra, chúng tôi đang cố gắng khắc phục sự cố. Quý Khách xin vui lòng thử lại sau."
+  },
+  "page503": {
+    "title": "Rất tiếc, hệ thống đang được bảo trì",
+    "description": "Trang thông tin Quý Khách tìm kiếm đang trong quá trình bảo trì, vui lòng thử lại sau."
+  },
+  "notify": {
+    "sent_successfully": "Gửi thành công",
+    "sent_failed": "Gửi thất bại",
+    "thank_you": "Cảm ơn bạn liên hệ với chúng tôi!",
+    "please_check": "Vui lòng kiểm tra lại thông tin",
+    "close": "Đóng",
+    "no_data": "Không có dữ liệu"
+  },
+  "pages": {
+    "home": "Trang chủ",
+    "news": "Hỗ trợ cộng đồng",
+    "news_events": "Tin tức sự kiện",
+    "investment_sectors": "Lĩnh vực đầu tư",
+    "member_company": "Công ty thành viên",
+    "investment_relations": "Quan hệ đầu tư",
+    "recruitment_news": "Tin tuyển dụng"
+  },
+  "news": {
+    "filter_all": "Tất cả tin tức",
+    "latest_news": "Tin tức mới nhất",
+    "date_picker_start": "Từ ngày",
+    "date_picker_end": "Đến ngày",
+    "related_news": "Các bài viết liên quan"
+  },
+  "contact": {
+    "cf_name_placeholder": "Tên",
+    "cf_email_placeholder": "Email",
+    "cf_phone_placeholder": "Số điện thoại",
+    "cf_unit_placeholder": "Đơn vị",
+    "cf_content_placeholder": "Nội dung",
+    "cf_file_label": "File đính kèm (Vui lòng chọn file < 3mb, file pdf, doc, docx) *",
+    "cf_file_placeholder": "Chọn file từ máy tính",
+    "cf_submit_btn": "Gửi"
+  },
+  "recruitment": {
+    "search_btn": "Tìm kiếm",
+    "apply_btn": "Ứng tuyển",
+    "apply": "Ứng tuyển",
+    "position": "Chức vụ",
+    "occupation": "Bộ phận",
+    "location": "Địa điểm",
+    "application_code": "Mã ứng tuyển",
+    "expire_date": "Ngày hết hạn",
+    "filter_all": "Tất cả",
+    "rf_name_label": "Họ và tên",
+    "rf_phone_label": "Số điện thoại",
+    "rf_name_placeholder": "Nhập họ và tên",
+    "rf_phone_placeholder": "Nhập số điện thoại",
+    "rf_work_experience_label": "Kinh nghiệm làm việc",
+    "rf_work_experience_placeholder": "Nhập số năm kinh nghiệm làm việc",
+    "rf_position_label": "Chức vụ",
+    "rf_email_label": "Email",
+    "rf_email_placeholder": "Nhập email",
+    "rf_location_label": "Địa điểm",
+    "rf_location_placeholder": "Chọn địa điểm",
+    "rf_file_label": "File đính kèm (Vui lòng chọn file < 3mb, file pdf, doc, docx) *",
+    "rf_file_placeholder": "Chọn file từ máy tính",
+    "rf_enter_number_years_work_experience": "Nhập số năm kinh nghiệm làm việc",
+    "rf_nearest_company_label": "Công ty làm gần nhất",
+    "rf_nearest_company_placeholder": "Công ty làm gần nhất",
+    "hochiminh": "Hồ Chí Minh",
+    "hanoi": "Hà Nội",
+    "quantity": "Số Lượng"
+  },
+  "search": {
+    "latest_results": "Kết quả mới nhất",
+    "oldest_result": "Kết quả cũ nhất",
+    "enter_search_keywords": "Điền từ khoá tìm kiếm",
+    "results_found_for": "kết quả tìm thấy cho",
+    "sort_results": "Sắp xếp kết quả"
+  },
+  "diagnostic": {
+    "unit": "Rất tiếc, chúng tôi không tìm thấy trang này.",
+    "department": "Bộ phận",
+    "location": "Địa điểm",
+    "expiration_date": "Ngày hết hạn"
+  },
+  "remuneration_policy": {
+    "title": "Chính sách đãi ngộ"
+  },
+  "pdfList" : {
+    "search": "Tìm tài liệu",
+    "lastest_uploaded": "Ngày đăng mới nhất",
+    "last_posting_date": "Ngày đăng cuối cùng",
+    "published_date": "Ngày phát hành",
+    "title": "Tiêu đề",
+    "download": "Tải xuống",
+    "touch_to_download": "Vui lòng nhấn giữ vào nút để tải về"
+  }
+}

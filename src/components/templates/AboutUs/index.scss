@@ -1,0 +1,97 @@
+.t-aboutUs {
+    &_flex {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &_col {
+        &:first-of-type {
+            flex: 0 0 calc(594 / 1126 * 100%);
+            padding-right: rem(80);
+
+            @include tablet-down {
+                flex: 0 0 45%;
+                padding-right: rem(40);
+            }
+
+            @include mobile-down {
+                flex: 0 0 100%;
+                padding-right: 0;
+            }
+        }
+
+        &:last-of-type {
+            flex: 0 0 calc(532 / 1126 * 100%);
+
+            @include tablet-down {
+                flex: 0 0 55%;
+            }
+
+            @include mobile-down {
+                flex: 0 0 100%;
+                margin-top: rem(16);
+            }
+        }
+    }
+
+    &_desc {
+        margin-top: rem(20);
+
+        @include tablet-down {
+            margin-top: rem(12);
+        }
+    }
+
+    &_wrapImage {
+        position: relative;
+    }
+
+    &_rectangle {
+        height: rem(340);
+        position: absolute;
+        right: 0;
+        top: rem(28);
+        width: rem(340);
+
+        @include tablet-down {
+            height: rem(240);
+            width: rem(240);
+        }
+
+        @include mobile-down {
+            height: rem(190);
+            top: rem(20);
+            width: rem(190);
+        }
+    }
+
+    &_imageMain {
+        max-width: rem(402);
+
+        @include tablet-down {
+            max-width: rem(330);
+        }
+
+        @include mobile-down {
+            max-width: rem(290);
+        }
+    }
+
+    &_imageSub {
+        max-width: rem(257);
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+
+        @include tablet-down {
+            max-width: rem(220);
+        }
+
+        @include mobile-down {
+            max-width: rem(180);
+        }
+    }
+}

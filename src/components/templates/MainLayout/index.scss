@@ -1,0 +1,17 @@
+.t-mainLayout {
+    &_content {
+        padding-top: rem($height-header-desktop);
+
+        @include tablet-down {
+            padding-top: rem($height-header-tablet);
+        }
+
+        @include mobile-down {
+            padding-top: rem($height-header-mobile);
+        }
+    
+        &-home {
+            min-height: 100vh;
+        }
+    }
+}

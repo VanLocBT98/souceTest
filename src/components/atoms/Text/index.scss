@@ -1,0 +1,28 @@
+$font-sizes: (
+    '12x16': (desktop:(fs: 12, lh: 16)),
+    '14x22': (desktop:(fs: 14, lh: 22)),
+    '16x24': (desktop:(fs: 16, lh: 24), mobile:(fs: 14, lh: 22)),
+    '20x30': (desktop:(fs: 20, lh: 30), tablet:(fs: 18, lh: 28), mobile:(fs: 16, lh: 24)),
+    '24x32': (desktop:(fs: 24, lh: 32), tablet:(fs: 22, lh: 30), mobile:(fs: 20, lh: 30)),
+    '38x52': (desktop:(fs: 38, lh: 52), tablet:(fs: 32, lh: 34), mobile:(fs: 24, lh: 24)),
+    '14x21': (desktop:(fs: 14, lh: 21)),
+    '18x28':(desktop:(fs: 18, lh: 28), mobile:(fs: 16, lh: 24)),
+);
+
+.a-text {
+    margin: 0;
+    transition: $transition ease;
+    @include font-base(14, 22);
+    @include mobile-down {
+        @include font-base(12, 20);
+    }
+
+    &-inline {
+        display: inline-block;
+    }
+
+    @include style-font-size($font-sizes);
+    @include style-color();
+    @include style-font-weight();
+    @include style-general();
+}

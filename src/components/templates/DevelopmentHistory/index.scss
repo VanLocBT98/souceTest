@@ -1,0 +1,246 @@
+.t-developmentHistory {
+    $root: &;
+
+    &_descMain {
+        margin: rem(24) 0 rem(57);
+
+        @include tablet-down {
+            margin: rem(22) 0 rem(44);
+        }
+
+        @include small-mobile {
+            margin: rem(14) 0 rem(32);
+        }
+
+        .a-text {
+            @include mobile-down {
+                @include font-base(14, 22);
+            }
+        }
+    }
+
+    &_timeline {
+        margin-bottom: rem(48);
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+
+        @include tablet-down {
+            margin-bottom: rem(35);
+        }
+
+        @include small-mobile {
+            margin-bottom: rem(22);
+        }
+
+        .slick-list {
+            height: rem(50);
+
+            &::before {
+                background-color: $anti-flash-white;
+                content: '';
+                height: rem(3);
+                left: 50%;
+                position: absolute;
+                top: rem(13);
+                transform: translateX(-50%);
+                width: 88%;
+            }
+        }
+
+        .slick-slide {
+            &:nth-child(2) {
+                #{$root}_timeline_item {
+                    &::before {
+                        transform: translateX(0%);
+                    }
+                }
+            }
+        }
+
+        .slick-current {
+            p {
+                color: $black-85;
+            }
+        }
+
+
+        #{$root}_timeline_item-active {
+            &::before {
+                width: 100%;
+            }
+
+            #{$root}_timeline_point {
+                div {
+                    background-color: $may-green;
+                    height: rem(10);
+                    width: rem(10);
+                }
+            }
+        }
+
+        #{$root}_timeline_item-first {
+            &::before {
+                width: 0;
+            }
+        }
+
+        &_item {
+            @include adjust-flex(flex-end);
+            position: relative;
+
+            &::before {
+                content: '';
+                height: rem(3);
+                position: absolute;
+                right: 50%;
+                transform: translateX(-100%);
+                transition: all ease-out 0.2s;
+                width: 100%;
+            }
+
+            &-active,
+            &-first {
+                &::before {
+                    background-color: $may-green;
+                    transform: translateX(0%);
+                }
+            }
+
+            &-first {
+                &::before {
+                    background-color: $may-green;
+                    content: '';
+                    left: auto;
+                    right: 0;
+                    transform: translateX(0%);
+                    width: 0%;
+                }
+            }
+        }
+
+        &_content {
+            cursor: pointer;
+            position: absolute;
+            right: calc(44% - 8px);
+            top: calc(100% + 9px);
+        }
+
+        &_point {
+            background-color: $white;
+            cursor: pointer;
+            position: absolute;
+            right: 44%;
+            width: rem(18);
+            z-index: 2;
+
+            div {
+                background-color: $black-25;
+                border-radius: 50%;
+                height: rem(8);
+                margin: 0 auto;
+                transition: all ease-in-out 0.3s;
+                width: rem(8);
+            }
+        }
+    }
+
+    &_content {
+        background: $white;
+        box-shadow: 0 0 rem(24) rem(1) $kombu-green-1;
+        padding: rem(32);
+        position: relative;
+
+        @include tablet-down {
+            padding: rem(26);
+        }
+
+        @include small-mobile {
+            padding: rem(15) rem(24);
+        }
+
+        &::before {
+            background-color: $may-green;
+            content: '';
+            height: 75%;
+            left: 0;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: rem(3);
+        }
+
+        &_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &_desc {
+            margin-top: rem(13);
+
+            @include small-mobile {
+                margin-top: 0;
+            }
+
+            ul,
+            ol {
+                padding-left: rem(20);
+            }
+        }
+
+        &_left {
+            flex: 1;
+            padding-right: rem(33);
+
+            @include tablet-down {
+                padding-right: rem(26);
+            }
+
+            @include small-mobile {
+                flex: 0 0 99%;
+                padding-right: 0;
+            }
+        }
+
+        &_right {
+            flex: 0 0 rem(255);
+
+            @include small-mobile {
+                flex: 0 0 100%;
+                margin-top: rem(10);
+            }
+        }
+
+        .slick-prev {
+            left: rem(-121);
+
+            @include break-max(1365px) {
+                left: rem(-89);
+            }
+
+            @include desktop-down {
+                left: rem(-55);
+            }
+
+            @include tablet-down {
+                left: rem(-34);
+            }
+        }
+
+        .slick-next {
+            right: rem(-128);
+
+            @include break-max(1365px) {
+                right: rem(-89);
+            }
+
+            @include desktop-down {
+                right: rem(-55);
+            }
+
+            @include tablet-down {
+                right: rem(-34);
+            }
+        }
+    }
+}

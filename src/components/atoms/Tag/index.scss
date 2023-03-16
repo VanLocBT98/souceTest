@@ -1,0 +1,9 @@
+.a-tag {
+    border: 1px solid $gainsboro;
+    border-radius: rem(2);
+    color: $raisin-black;
+    cursor: pointer;
+    padding: rem(1) rem(8);
+  
+    @include font-base(12, 16); 
+}

@@ -1,0 +1,39 @@
+.m-visionmission {
+    align-items: center;
+    background-color: $white;
+    border-bottom: $one-border-gainsboro;
+    border-left: $one-border-gainsboro;
+    border-right: $one-border-gainsboro;
+    border-style: solid;
+    border-top: rem(3) solid $may-green;
+    display: flex;
+    flex-direction: column;
+    min-height: rem(370);
+    padding: rem(32) rem(28);
+
+    @include mobile-down {
+        min-height: auto;
+    }
+
+    &_image {
+        max-width: rem(100);
+        width: 100%;
+
+        @include tablet-down {
+            max-width: rem(70);
+        }
+    }
+
+    &_title {
+        margin-top: rem(20);
+
+        @include tablet-down {
+            margin-top: rem(15);
+        }
+    }
+
+    &_content {
+        margin-top: rem(12);
+        @include text-overflow(6);
+    }
+}

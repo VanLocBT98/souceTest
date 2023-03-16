@@ -1,0 +1,110 @@
+.t-contactus {
+    background-color: $snow;
+    background-repeat: no-repeat;
+    padding-bottom: rem(40);
+    padding-top: rem(40);
+
+    @include tablet-up {
+        padding-bottom: rem(45);
+        padding-top: rem(45);
+    }
+
+    @include desktop-up {
+        padding-bottom: rem(56);
+        padding-top: rem(56);
+    }
+
+    &_wrapcontent {
+        margin-top: rem(20);
+
+        @include tablet-up {
+            margin-top: rem(40);
+        }
+    }
+
+    &_wrapform {
+        background-color: $white-smoke;
+        border-radius: rem(10);
+        padding: rem(0) rem(25) rem(30);
+
+        @include tablet-up {
+            padding: rem(35) rem(45);
+        }
+
+        @include desktop-up {
+            padding: rem(48) rem(64);
+        }
+    }
+
+    &_formfield {
+        margin-top: rem(32);
+
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+
+        .o-container_col {
+            &:nth-child(n + 2) {
+                margin-top: rem(25);
+
+                @include tablet-up {
+                    margin-top: rem(0);
+                }
+            }
+        }
+    }
+
+    &_button {
+        display: flex;
+        justify-content: center;
+        margin-top: rem(20);
+
+        .a-button-primary {
+            @include font-base(14, 22);
+            width: rem(112);
+        }
+
+        @include tablet-up {
+            margin-top: rem(40);
+        }
+    }
+
+    &_infomation {
+        display: flex;
+        flex-direction: column;
+        margin-top: rem(30);
+        padding: 0 rem(20);
+
+        @include tablet-up {
+            display: unset;
+            margin-top: rem(0);
+            padding: 0;
+        }
+    }
+
+    &_address {
+        margin-top: rem(16);
+    }
+
+    &_email,
+    &_phone {
+        display: flex;
+        margin-top: rem(8);
+    }
+
+    &_social {
+        display: flex;
+        margin-top: rem(26);
+
+        &_item {
+            .a-image {
+                height: rem(24);
+                width: rem(24);
+            }
+
+            &:nth-child(n + 2) {
+                margin-left: rem(25);
+            }
+        }
+    }
+}

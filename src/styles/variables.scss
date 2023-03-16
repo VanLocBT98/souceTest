@@ -1,0 +1,29 @@
+// fonts
+$font-path: '~assets/fonts/';
+$font-sanfrancisco: 'San Francisco Display';
+
+$icon-path: '~assets/icons/';
+// transition
+$transition: 0.25s;
+$transition-medium: 0.3s;
+$transition-long: 0.4s;
+
+// z-index
+$z-header: 100;
+$z-modal: 101;
+$z-1: 1;
+$z-2: 2;
+$z-loading: 999;
+$z-datepicker: 3;
+$z-language: 98;
+
+// space
+$height-header-desktop: 128;
+$height-header-tablet: 101;
+$height-header-mobile: 83;
+$height-header-desktop-scroll: 76;
+$height-header-tablet-down: 65;
+
+$standard-viewport: 1366px;
+
+$positionx-content-herobanner: calc((120 / 1366) * 100%);
